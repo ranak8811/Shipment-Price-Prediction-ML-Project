@@ -5,6 +5,8 @@ from shipment.utils.main_utils import MainUtils
 from shipment.constants import DB_URL
 from shipment.configuration.mongo_operations import MongoDBOperation
 
+from shipment.pipline.training_pipeline import TrainPipeline
+
 # ------------------------> 1 <------------------------
 # logging.info('this is checking 2')
 
@@ -30,9 +32,15 @@ from shipment.configuration.mongo_operations import MongoDBOperation
 
 # ------------------------> 5 <------------------------
 
-obj = MongoDBOperation()
+# obj = MongoDBOperation()
 
-df = obj.get_collection_as_dataframe(
-    db_name='ShipmentDB', collection_name='shipment_collection')
+# df = obj.get_collection_as_dataframe(
+#     db_name='ShipmentDB', collection_name='shipment_collection')
 
-print(df.head())
+# print(df.head())
+
+# ------------------------> 6 <------------------------
+
+obj = TrainPipeline()
+
+obj.run_pipeline()
