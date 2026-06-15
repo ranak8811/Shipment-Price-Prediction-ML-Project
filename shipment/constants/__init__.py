@@ -14,3 +14,17 @@ MODEL_CONFIG_FILE = "config/model.yaml"
 SCHEMA_FILE_PATH = "config/schema.yaml"
 
 DB_URL = environ["MONGO_DB_URL"]
+
+TEST_SIZE = 0.2
+
+
+# Database related constants
+DB_NAME = "ShipmentDB"
+COLLECTION_NAME = "shipment_collection"
+
+# Data Ingestion related constants
+DATA_INGESTION_ARTIFACTS_DIR = "DataIngestionArtifacts"
+DATA_INGESTION_TRAIN_DIR = "Train"
+DATA_INGESTION_TEST_DIR = "Test"
+DATA_INGESTION_TRAIN_FILE_NAME = "train.csv"
+DATA_INGESTION_TEST_FILE_NAME = "test.csv"

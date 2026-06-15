@@ -3,6 +3,7 @@ from shipment.exception import shippingException
 import sys
 from shipment.utils.main_utils import MainUtils
 from shipment.constants import DB_URL
+from shipment.configuration.mongo_operations import MongoDBOperation
 
 # ------------------------> 1 <------------------------
 # logging.info('this is checking 2')
@@ -25,4 +26,13 @@ from shipment.constants import DB_URL
 
 # ------------------------> 4 <------------------------
 
-print(DB_URL)
+# print(DB_URL)
+
+# ------------------------> 5 <------------------------
+
+obj = MongoDBOperation()
+
+df = obj.get_collection_as_dataframe(
+    db_name='ShipmentDB', collection_name='shipment_collection')
+
+print(df.head())
