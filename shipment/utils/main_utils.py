@@ -1,6 +1,7 @@
 import sys
-import numpy as np
+import dill
 import yaml
+import numpy as np
 from shipment.exception import shippingException
 from shipment.logger import logging
 
@@ -46,6 +47,20 @@ class MainUtils:
         try:
             with open(file_path, "rb") as file_obj:
                 return np.load(file_obj)
+
+        except Exception as e:
+            raise shippingException(e, sys) from e
+
+    @staticmethod
+    def save_object(file_path: str, obj: object) -> None:
+        logging.info("Entered the save_object method of MainUtils class")
+        try:
+            with open(file_path, "wb") as file_obj:
+                dill.dump(obj, file_obj)
+
+            logging.info("Exited the save_object method of MainUtils class")
+
+            return file_path
 
         except Exception as e:
             raise shippingException(e, sys) from e
