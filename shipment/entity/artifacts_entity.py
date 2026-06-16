@@ -24,3 +24,10 @@ class DataTransformationArtifacts:
     transformed_object_file_path: str
     transformed_train_file_path: str
     transformed_test_file_path: str
+
+# Model Trainer Artifacts
+
+
+@dataclass
+class ModelTrainerArtifacts:
+    trained_model_file_path: str
