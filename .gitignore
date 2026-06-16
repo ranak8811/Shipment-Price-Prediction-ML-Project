@@ -220,3 +220,5 @@ __marimo__/
 # Project Explanations
 Explanation/
 
+# Remove artifacts files
+artifacts/*
